@@ -1,0 +1,256 @@
+@import "base.less";
+
+html{
+    font-size: 26.6667vw;
+}
+body{
+    font-size: 0.14rem;
+}
+
+//头部部分
+#header{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+    >.icon-logo{
+        width: .8rem;
+        height: 0.45rem;
+        background: url(../images/sprites.png);//背景图片需要变小成一倍
+        background-size: 2rem 2rem;//背景图片的定位也要小一倍
+        background-position: 0px -1.1rem;
+        //盒子虽然很大80  但是真实显示图片只有60*25图片是居中在页面里面显示 设置一个padding把图片挤到中间来 
+        padding:0.1rem;
+        //设置背景图的定位参数点
+        background-origin: content-box;
+        //背景图的裁切  裁切掉除了这个范围以外的背景图
+        background-clip: content-box;
+        
+    }
+
+    >form{
+        flex: 1;
+        position: relative;
+        padding-top:0.05rem;
+        .icon-search{
+            background: url(../images/sprites.png);/*背景图片需要变小成一倍*/
+            background-size: 2rem 2rem;/*背景图片的定位也要小一倍*/
+            background-position: -0.6rem -1.1rem;
+            width: 0.2rem;
+            height: 0.2rem;
+            position: absolute;
+            left:0.1rem;
+            top:0.12rem;
+         
+        }    
+
+        input{
+           width: 100%;
+           border-radius: 0.17rem;
+           height:0.35rem;
+           padding-left: 0.3rem;
+           font-size: .14rem;
+        }
+
+    }
+
+    >.login{
+        width: 0.5rem;
+        line-height: 0.45rem;
+        text-align: center;
+        color:#fff;
+    }
+
+    
+}
+
+// 轮播图
+#slide{ 
+    img {
+        width: 100%;
+    }
+    .swiper-container{
+        width: 100%;
+    }    
+    .swiper-pagination-bullet-active{
+            background-color: #fff;
+    }
+}
+
+// 导航栏部分
+#nav {
+    background-color: #fff;
+    padding:0.1rem 0;
+    ul{
+        display: flex;
+        //flex支持换行
+        flex-wrap: wrap;
+        li{
+            width: 25%;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 0.4rem;
+                    height: 0.4rem;
+                }
+                p{
+                    margin:0.05rem 0;
+                }
+            }
+        }
+      }
+
+}
+
+//主体部分
+#main{
+    padding:0.1rem;
+    background-color: #eee;
+    padding-bottom: 60px;
+    .seckill{
+        background-color: #fff;
+        box-shadow: 0px 0px 0.02rem 0.01rem #ccc;
+        .title{
+            display: flex;
+            justify-content: space-between;
+            line-height: 0.3rem;
+            .left{
+                display: flex;
+                .seckill-icon{
+                    width: 0.2rem;
+                    height: 0.24rem;
+                    margin-left:0.05rem;
+                }
+
+                .seckill-name{
+                    color:@main-color;
+                    margin-left:0.05rem;
+                }
+
+                .seckill-downtime{
+                    margin-left:0.05rem;
+                    span:not(:nth-child(3n)){
+                        color:#fff;
+                        background-color: #000;
+                        padding: 0px 0.05rem;
+                      
+                    }
+                }
+
+               
+            }
+
+            .right{
+                .more{
+                    margin-right:0.1rem;
+                }
+            }
+        }
+        .content{
+            ul{
+                display: flex;
+                li{
+                    width: 33.33%;
+                    a{
+                        text-align: center;
+
+                        img{
+                            width: 100%;
+                        }
+                        span{
+                            font-size: 0.12rem;
+                            color:@main-color;
+                        }
+                        del{
+                            font-size: 0.12rem;
+                            color:#ccc;
+                        }
+                    }
+
+                    &~li{
+                        border-left:0.01rem solid #ccc;
+                    }
+                  
+                }
+                
+            }
+        }
+
+
+       
+    }
+
+    .jd-market{
+        margin-top:0.1rem;
+        background-color: #fff;
+        box-shadow: 0px 0px 0.02rem 0.01rem #ccc;
+        .title{
+            line-height: 0.3rem;
+            position: relative;
+            h4{
+                padding-left: 0.3rem;
+                &::before{
+                    content:"";
+                    height:0.16rem;
+                    width: 0.04rem;
+                    background-color: @main-color;
+                    position: absolute;
+                    left:0.2rem;
+                    top:0.07rem;
+                }
+            }
+        }
+        .content{
+            display: flex;
+
+            .left{
+                width: 50%;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;//100%相当于right的宽度 所以不用设置具体值
+                    }
+                }
+                
+                
+            }
+    
+            .right{
+                width: 50%;
+                a{
+                    display: block;
+                    img{
+                        width: 100%; //100%相当于right的宽度 所以不用设置具体值
+                    }
+                }
+            }
+
+            
+        }
+       
+    }
+}
+
+//底部部分
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: @main-color;
+    ul {
+        display: flex;
+        li {
+            width: 20%;
+            text-align: center;
+            a {
+                display: block;
+            }
+        }
+    }
+    img {
+        width: .65rem;
+    }
+}
